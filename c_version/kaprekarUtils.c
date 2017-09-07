@@ -27,13 +27,14 @@
 int isKaprekar(int n) {
 
   if(n < 1) {
+    // Returned 0 rather than false
     return 0;
   }
 
   int i;
   long square = (long) n * (long) n;
-  int numDigits = (int) log10(square) + 1;
-  long modulus = 1;
+  int numDigits = (int) log10(square) + 1; // replaced n with square
+  long modulus = 1; // Set modulus equal to 1 instead of 0
   long first, second;
   for(i=1; i<=numDigits; i++) {
     modulus *= 10;
